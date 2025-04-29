@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ezaaz Ahmad - Manual QA Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            royalblue: '#4169e1',
+            darkbg: '#0f172a'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* 3D Animation Styles */
+    .floating-element {
+      animation: float 6s ease-in-out infinite;
+      transform-style: preserve-3d;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotateX(0) rotateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px) rotateX(5deg) rotateY(5deg);
+      }
+    }
+
+    .parallax-container {
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+
+    .parallax-layer {
+      transform: translateZ(var(--parallax-depth)) scale(calc(1 + var(--parallax-depth) * 0.1));
+      transition: transform 0.3s ease-out;
+    }
+
+    .card-3d {
+      transform: perspective(1000px) rotateX(0) rotateY(0) translateZ(0);
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .card-3d:hover {
+      transform: perspective(1000px) rotateX(3deg) rotateY(3deg) translateZ(20px);
+    }
+
+    .background-shapes {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .shape {
+      position: absolute;
+      opacity: 0.1;
+      animation: shapeMove 20s linear infinite;
+    }
+
+    @keyframes shapeMove {
+      0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+      }
+
+      100% {
+        transform: translate3d(100vw, 100vh, 100px) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="bg-white dark:bg-darkbg text-gray-900 dark:text-gray-100 font-inter transition-colors duration-300 overflow-x-hidden">
+  <!-- 3D Background Elements -->
+  <div class="background-shapes">
+    <div class="shape w-24 h-24 bg-royalblue rounded-full top-20 left-10" style="animation-delay: -2s"></div>
+    <div class="shape w-32 h-32 bg-royalblue/30 blur-lg top-1/2 right-20" style="animation-delay: -5s"></div>
+    <div class="shape w-16 h-16 bg-royalblue/20 blur-md bottom-40 left-1/4" style="animation-delay: -10s"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-white/80 dark:bg-darkbg/80 backdrop-blur-md z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+      <div class="flex items-center space-x-4">
+        <div class="text-2xl font-bold text-royalblue">Ezaaz Ahmad</div>
+        <div class="flex space-x-3">
+          <a href="https://linkedin.com/in/ezaazahmad"
+            class="text-royalblue hover:text-blue-700 dark:hover:text-blue-300">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="mailto:ezaazahmad2005@outlook.com"
+            class="text-royalblue hover:text-blue-700 dark:hover:text-blue-300 ">
+            <i class="fas fa-envelope text-xl"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6">
+            <li><a href="#home" class="nav-link hover:text-royalblue card-3d">Home</a></li>
+            <li><a href="#expertise" class="nav-link hover:text-royalblue card-3d">Expertise</a></li>
+            <li><a href="#testimonials" class="nav-link hover:text-royalblue card-3d">Reviews</a></li>
+            <li><a href="#contact" class="nav-link hover:text-royalblue card-3d">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button id="theme-toggle"
+          class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition card-3d">
+          <i class="fas fa-moon text-royalblue dark:text-blue-300"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 parallax-container">
+    <div class="max-w-4xl floating-element" data-aos="zoom-in">
+      <div class="mb-8 transform-style-preserve-3d">
+        <img src="profile-3d.png" alt="QA Professional" class="w-64 h-64 mx-auto rounded-full shadow-xl card-3d">
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">Manual QA Engineer</h1>
+      <p class="text-xl mb-8">Ensuring Software Excellence Through Rigorous Testing</p>
+      <a href="#contact" class="bg-royalblue text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition card-3d">Let's
+        Collaborate</a>
+    </div>
+  </section>
+
+  <!-- Expertise Section -->
+  <section id="expertise" class="py-20 px-4 bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-lg">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold mb-12 text-center" data-aos="fade-up">Core Expertise</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Testing Methodologies -->
+        <div class="p-6 rounded-lg bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm card-3d" data-aos="fade-right">
+          <h3 class="text-2xl font-bold mb-6 text-royalblue">Testing Methodologies</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="skill-card card-3d">
+              <h4 class="font-semibold mb-2">Functional Testing</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">End-to-end system validation</p>
+            </div>
+            <!-- Add other methodologies here -->
+            <div class="skill-card">
+              <h4 class="font-semibold mb-2">Regression Testing</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Ensuring existing functionality remains intact</p>
+            </div>
+            <div class="skill-card">
+              <h4 class="font-semibold mb-2">Cross-Browser Testing</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Consistent performance across platforms</p>
+            </div>
+            <div class="skill-card">
+              <h4 class="font-semibold mb-2">User Acceptance Testing</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Real-world scenario validation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="p-6 rounded-lg bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm card-3d" data-aos="fade-left">
+          <h3 class="text-2xl font-bold mb-6 text-royalblue">Tools & Technologies</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="skill-card card-3d">
+              <h4 class="font-semibold mb-2">JIRA</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Defect tracking system</p>
+            </div>
+            <!-- Add other tools here -->
+            <div class="skill-card">
+              <h4 class="font-semibold mb-2">TestRail</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Test case management & reporting</p>
+            </div>
+            <div class="skill-card">
+              <h4 class="font-semibold mb-2">Postman</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">API testing & documentation</p>
+            </div>
+            <div class="skill-card">
+              <h4 class="font-semibold mb-2">BrowserStack</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Cross-browser compatibility testing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold mb-12 text-center" data-aos="fade-up">Client Reviews</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="testimonial-card" data-aos="zoom-in">
+          <h4 class="font-bold text-lg mb-2 text-royalblue">Sarah Johnson</h4>
+          <p class="text-gray-700 dark:text-gray-300">"Exceptional attention to detail and thorough test coverage."</p>
+        </div>
+        <!-- Add other testimonials here -->
+        <div class="testimonial-card" data-aos="zoom-in">
+          <h4 class="font-bold text-lg mb-2 text-royalblue">Michael Chen</h4>
+          <p class="text-gray-700 dark:text-gray-300">"Consistently delivers thorough test cases and identifies edge
+            cases others miss. A true asset to any quality-focused team."</p>
+        </div>
+        <div class="testimonial-card" data-aos="zoom-in">
+          <h4 class="font-bold text-lg mb-2 text-royalblue">Emma Wilson</h4>
+          <p class="text-gray-700 dark:text-gray-300">"Impressive attention to detail and user-centric testing approach.
+            Great collaborator and problem-solver."</p>
+        </div>
+        <div class="testimonial-card" data-aos="zoom-in">
+          <h4 class="font-bold text-lg mb-2 text-royalblue">David Miller</h4>
+          <p class="text-gray-700 dark:text-gray-300">"Reliable and thorough testing services. Always meets deadlines
+            while maintaining high quality standards."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-4 bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-lg">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-8" data-aos="fade-up">Get in Touch</h2>
+      <form action="https://formspree.io/f/xkgrooqb" method="POST" class="space-y-6">
+        <input type="text" name="name" placeholder="Name" required
+          class="w-full p-3 rounded-lg dark:bg-gray-700 focus:ring-2 focus:ring-royalblue">
+
+        <input type="email" name="email" placeholder="Email" required
+          class="w-full p-3 rounded-lg dark:bg-gray-700 focus:ring-2 focus:ring-royalblue">
+
+        <textarea name="message" rows="4" placeholder="Message" required
+          class="w-full p-3 rounded-lg dark:bg-gray-700 focus:ring-2 focus:ring-royalblue"></textarea>
+
+        <button type="submit" class="bg-royalblue text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition card-3d">
+          Send Message
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+  <footer class="bg-royalblue text-white py-6 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p>© 2024 Ezaaz Ahmad. Champion of Quality Assurance</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.classList.add(savedTheme);
+    themeToggle.querySelector('i').classList.add(savedTheme === 'dark' ? 'fa-moon' : 'fa-sun');
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+      const icon = themeToggle.querySelector('i');
+      icon.classList.toggle('fa-sun');
+      icon.classList.toggle('fa-moon');
+
+      // Ensure appropriate icon color classes
+      if (isDark) {
+        icon.classList.remove('text-royalblue');
+        icon.classList.add('text-blue-300');
+      } else {
+        icon.classList.remove('text-blue-300');
+        icon.classList.add('text-royalblue');
+      }
+    });
+
+
+    // 3D Mouse Movement Effect
+    document.addEventListener('mousemove', (e) => {
+      const cards = document.querySelectorAll('.card-3d');
+      const mouseX = (e.clientX - window.innerWidth / 2) / 30;
+      const mouseY = (e.clientY - window.innerHeight / 2) / 30;
+
+      cards.forEach(card => {
+        card.style.transform = `
+          perspective(1000px)
+          rotateX(${mouseY}deg)
+          rotateY(${mouseX}deg)
+          translateZ(10px)
+        `;
+      });
+    });
+  </script>
+</body>
+
+</html>
